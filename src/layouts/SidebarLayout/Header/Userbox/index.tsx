@@ -1,27 +1,19 @@
 import { useRef, useState } from 'react';
 
-import { NavLink } from 'react-router-dom';
-
 import {
   Avatar,
   Box,
   Button,
-  Divider,
   Hidden,
   lighten,
-  List,
-  ListItem,
-  ListItemText,
   Popover,
   Typography
 } from '@mui/material';
 
-import InboxTwoToneIcon from '@mui/icons-material/InboxTwoTone';
 import { styled } from '@mui/material/styles';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
-import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
+import { useNavigate } from 'react-router';
 
 const UserBoxButton = styled(Button)(
   ({ theme }) => `
@@ -59,17 +51,15 @@ const UserBoxDescription = styled(Typography)(
 );
 
 function HeaderUserbox() {
-
-  const user =
-  {
-    name: 'Catherine Pike',
+  const user = {
+    name: 'Name',
     avatar: '/static/images/avatars/1.jpg',
-    jobtitle: 'Project Manager'
+    jobtitle: 'Admin'
   };
 
   const ref = useRef<any>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
-
+  const nav = useNavigate();
   const handleOpen = (): void => {
     setOpen(true);
   };
@@ -78,6 +68,12 @@ function HeaderUserbox() {
     setOpen(false);
   };
 
+  const handleSignOut = () => {
+    localStorage.removeItem('access_token');
+    if (!Boolean(localStorage.removeItem('access_token'))) {
+      nav('/');
+    }
+  };
   return (
     <>
       <UserBoxButton color="secondary" ref={ref} onClick={handleOpen}>
@@ -116,7 +112,7 @@ function HeaderUserbox() {
             </UserBoxDescription>
           </UserBoxText>
         </MenuUserBox>
-        <Divider sx={{ mb: 0 }} />
+        {/* <Divider sx={{ mb: 0 }} />
         <List sx={{ p: 1 }} component="nav">
           <ListItem button to="/management/profile/details" component={NavLink}>
             <AccountBoxTwoToneIcon fontSize="small" />
@@ -139,9 +135,9 @@ function HeaderUserbox() {
             <ListItemText primary="Account Settings" />
           </ListItem>
         </List>
-        <Divider />
+        <Divider /> */}
         <Box sx={{ m: 1 }}>
-          <Button color="primary" fullWidth>
+          <Button color="primary" fullWidth onClick={handleSignOut}>
             <LockOpenTwoToneIcon sx={{ mr: 1 }} />
             Sign out
           </Button>

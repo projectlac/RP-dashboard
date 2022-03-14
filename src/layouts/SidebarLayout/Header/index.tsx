@@ -6,7 +6,6 @@ import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import { SidebarContext } from 'src/contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 
-import HeaderMenu from './Menu';
 import HeaderButtons from './Buttons';
 import HeaderUserbox from './Userbox';
 import Logo from 'src/components/Logo';
@@ -39,9 +38,9 @@ function Header() {
         <Hidden lgUp>
           <Logo />
         </Hidden>
-        <Hidden mdDown>
+        {/* <Hidden mdDown>
           <HeaderMenu />
-        </Hidden>
+        </Hidden> */}
       </Box>
       <Box display="flex" alignItems="center">
         <HeaderButtons />

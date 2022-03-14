@@ -6,7 +6,7 @@ import Footer from 'src/components/Footer';
 
 import RecentOrders from './RecentOrders';
 
-function ApplicationsTransactions() {
+function Hotspot() {
   return (
     <>
       <Helmet>
@@ -33,4 +33,4 @@ function ApplicationsTransactions() {
   );
 }
 
-export default ApplicationsTransactions;
+export default Hotspot;

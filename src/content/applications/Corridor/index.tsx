@@ -6,11 +6,11 @@ import Footer from 'src/components/Footer';
 
 import RecentOrders from './RecentOrders';
 
-function ApplicationsTransactions() {
+function Corridor() {
   return (
     <>
       <Helmet>
-        <title>Façade A - Applications</title>
+        <title>Corridor - Applications</title>
       </Helmet>
       <PageTitleWrapper>
         <PageHeader />
@@ -33,4 +33,4 @@ function ApplicationsTransactions() {
   );
 }
 
-export default ApplicationsTransactions;
+export default Corridor;

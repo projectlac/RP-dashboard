@@ -27,11 +27,9 @@ import {
 
 import Label from 'src/components/Label';
 import { CryptoOrder, CryptoOrderStatus } from 'src/models/crypto_order';
-// import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
-// import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
+import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
+import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import BulkActions from './BulkActions';
-import Edit from './Edit';
-import Delete from './Delete';
 
 interface RecentOrdersTableProps {
   className?: string;
@@ -87,6 +85,7 @@ const applyPagination = (
 };
 
 const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
+
   const [selectedCryptoOrders, setSelectedCryptoOrders] = useState<string[]>(
     []
   );
@@ -320,8 +319,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                         color="inherit"
                         size="small"
                       >
-                        {/* <EditTwoToneIcon fontSize="small" /> */}
-                        <Edit />
+                        <EditTwoToneIcon fontSize="small" />
                       </IconButton>
                     </Tooltip>
                     <Tooltip title="Delete Order" arrow>
@@ -333,8 +331,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                         color="inherit"
                         size="small"
                       >
-                        {/* <DeleteTwoToneIcon fontSize="small" /> */}
-                        <Delete />
+                        <DeleteTwoToneIcon fontSize="small" />
                       </IconButton>
                     </Tooltip>
                   </TableCell>
